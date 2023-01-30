@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <title>Hello mấy chế!!!</title>
+        <meta charset="UTF-8">
+        <base href="http://127.0.0.1:8000/">
+        <link type="image/png" sizes="16x16" rel="icon" href="./Favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+    	<h1 id="cangiuah1"><span style="font-size: 50px">Chào tất cả mọi người</span></h1>
+	    <p id="canabstrac"><span style="font-size: 30px">Abstraction</span></p>
+        <div id="submit">
+            <form method="post" action="uploadfile/"  enctype="multipart/form-data">   
+                <label for="file">Choose file to upload</label> </br>
+                <input type="file" name="files" multiple>
+                <input type="submit" value="Hello">
+            </form>
+        </div>
+        <form method="get" action="uploadfile/uploaded/"  enctype="multipart/form-data">
+            <input type="submit" value="Hello">
+        </form>
+    </body>
+
+    
+</html>
