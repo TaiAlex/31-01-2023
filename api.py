@@ -1,7 +1,7 @@
 from fastapi import File, UploadFile, Request, FastAPI, Depends, HTTPException
 from fastapi.templating import Jinja2Templates
 import str_time
-from testAPI import find_path, mp3_to_wav, wav_to_txt, split_list_answer
+from convert import find_path, mp3_to_wav, wav_to_txt, split_list_answer
 import os
 
 app = FastAPI()
