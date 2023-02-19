@@ -7,34 +7,6 @@ from pydub.utils import which
 
 pydub.AudioSegment.converter = which("ffmpeg")
 
-# def mp3_to_wav():
-#     folder_path = r'.\upload\*'
-#     sub_folders = glob.glob(folder_path)
-#     the_lastest_subfolder = max(sub_folders, key=os.path.getctime)
-#     files = glob.glob(the_lastest_subfolder + '\*')
-#     the_last_file = max(files, key=os.path.getctime)
-#     print(the_last_file)
-#     type = the_last_file.split('.')[1]
-#     if type == 'mp3':
-#         mp3_path = the_last_file
-#         wav_path = the_last_file.split('.')[0] + '.wav'
-#         sound = pydub.AudioSegment.from_mp3(mp3_path)
-#         sound.export(wav_path, format="wav")
-#         print(wav_path)
-#         return wav_path
-#     elif type == 'wav':
-#         return the_last_file
-#     else:
-#         return False
-    
-# def wav_to_txt(wav):
-#     r = sr.Recognizer()
-#     with sr.AudioFile(wav) as source:
-#         audio = r.record(source)
-#         text = r.recognize_google(audio, language = "vi-VI")
-#         with open('log.txt', mode = 'a', encoding = 'UTF-8', errors = 'ignore') as data:
-#             data.write(str(text))
-
 def split_list_answer(text_path):
     col_answer = []
     with open(text_path,"r", encoding="UTF-8") as f:
