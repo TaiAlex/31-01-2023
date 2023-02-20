@@ -12,10 +12,19 @@ def split_list_answer(text_path):
     with open(text_path,"r", encoding="UTF-8") as f:
         ot = f.read()       #original text
     for j in ot.split('bắt đầu'):
-        answer = j.split('thời')[0].strip()[-1]
-        col_answer.append(answer.upper())
+        answer1 = j.split('thời')[0].strip()[-1]
+        col_answer.append(answer1.upper())
     col_answer.pop(0)
-    return col_answer
+    for i in range(len(col_answer)):
+        col_index.append(f'{i + 1}')
+    for i in range(len(col_answer)):
+        if col_answer[i] == answer[i]:
+            result.append('True')
+        else:
+            result.append('False')
+    df = pd.DataFrame(zip(col_answer, answer,result), index=col_index, columns=['Answer of student', 'Answer', 'Result'])
+    print(df)
+    return df.to_html(justify='center')
 
 def find_path():
     folder_path = r'/home/ubuntu/html_1/upload/*'
@@ -32,6 +41,13 @@ def mp3_to_wav(file_path):
         mp3_path = str(file_path)
         wav_path = str(file_path.split('.')[0] + '.wav')
         sound = pydub.AudioSegment.from_mp3(mp3_path)
+        sound.export(wav_path, format="wav")
+        print(wav_path)
+        return wav_path
+    elif type == 'm4a':
+        m4a_path = str(file_path)
+        wav_path = str(file_path.split('.')[0] + '.wav')
+        sound = pydub.AudioSegment.from_file(m4a_path, format='m4a')
         sound.export(wav_path, format="wav")
         print(wav_path)
         return wav_path
