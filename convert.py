@@ -9,6 +9,9 @@ pydub.AudioSegment.converter = which("ffmpeg")
 
 def split_list_answer(text_path):
     col_answer = []
+    col_index = []
+    result = []
+    answer = ['B', 'A', 'C', 'C', 'A', 'C']
     with open(text_path,"r", encoding="UTF-8") as f:
         ot = f.read()       #original text
     for j in ot.split('bắt đầu'):
